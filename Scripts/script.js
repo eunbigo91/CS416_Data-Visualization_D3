@@ -224,18 +224,31 @@ async function init() {
             .y(d => y1(d.people_vaccinated_per_hundred))
             .curve(d3.curveBasis);
 
-        g.append("path")
+        g.append("g")
+            .attr("class", "line-group")
+            .style("position", "absolute")
+            .style("z-index", "2")
+            .append("path")
             .datum(data)
             .datum(data.filter(line.defined()))
             .attr("class", "line")
             .attr("fill", "none")
-            .attr("stroke-width", 1.5)
+            .attr("stroke-width", 3)
             .attr("stroke-linejoin", "round")
             .attr("stroke-linecap", "round")
             .attr("d", line);
 
-        g.selectAll(".line")
+        g.append("g")
+            .attr("class", "circle-group")
+            .selectAll(".dot")
             .data(data)
+            .enter()
+            .append("circle") // Uses the enter().append() method
+            .attr("class", "dot") // Assign a class for styling
+            .attr("cx", d => x(parseTime(d.date)))
+            .attr("cy", d => y1(d.people_vaccinated_per_hundred))
+            .attr("r", 3)
+            .style("opacity", 0)
             .on("mouseover", function(d) {
                 tooltip2.style("visibility", "visible")
                     .html("<strong>" + d.date + "</strong><br>" + "New cases: " + d.new_cases + "<br>Vaccinated Rate: " + d.people_vaccinated_per_hundred)
