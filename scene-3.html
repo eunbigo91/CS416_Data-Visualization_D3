@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Load d3.js and plugin -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <title>How does Covid-19 vaccinated rates correlate with new cases?</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body onload="init()">
+<div class="container">
+    <header class="emily-header py-3">
+        <div class="text-center">
+            <h1 class="emily-header-logo text-dark"> Covid-19 Narrative Visualization </h1>
+        </div>
+    </header>
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="index.html">Introduction</a>
+            <a class="p-2 text-muted" href="scene-2-USA.html">USA</a>
+            <a class="p-2 text-muted" href="scene-2-Israel.html">Israel</a>
+            <a class="p-2 text-muted" href="scene-2-UK.html">United Kingdom</a>
+            <a class="p-2 text-muted" href="scene-3.html">Explore Other Countries</a>
+        </nav>
+    </div>
+</div>
+<main role="main" class="container">
+    <div class="row">
+        <div class="blog-main p-md-4">
+            <div class="blog-post">
+                <h3> Explore Other Countries: Covid-19 Vaccinated Rate And New Cases</h3>
+                <p> Please use the dropdown box below to select and view country data. The graphs will be updated accordingly. Enjoy! </p>
+                <p style="text-align:center;">
+                <select id="filter-3">
+                    <script>
+                        var select = document.getElementById("filter-3");
+                        var options = ['United States','Afghanistan','Albania','Algeria','Andorra','Angola','Anguilla','Antigua and Barbuda','Argentina',
+                            'Armenia','Aruba','Australia','Austria','Azerbaijan','Bahamas','Bahrain','Bangladesh','Barbados','Belarus','Belgium',
+                            'Belize','Benin','Bermuda','Bhutan','Bolivia','Bonaire Sint Eustatius and Saba','Bosnia and Herzegovina','Botswana',
+                            'Brazil','British Virgin Islands','Brunei','Bulgaria','Burkina Faso','Burundi','Cambodia','Cameroon','Canada',
+                            'Cape Verde','Cayman Islands','Central African Republic','Chad','Chile','China','Colombia','Comoros','Congo',
+                            'Costa Rica',"Cote d'Ivoire",'Croatia','Cuba','Curacao','Cyprus','Czech Republic','Democratic Republic of Congo',
+                            'Denmark','Djibouti','Dominica','Dominican Republic','Ecuador','Egypt','El Salvador','Equatorial Guinea','Eritrea',
+                            'Estonia','Ethiopia','Faeroe Islands','Falkland Islands','Fiji','Finland','France','French Polynesia','Gabon',
+                            'Gambia','Georgia','Germany','Ghana','Gibraltar','Greece','Greenland','Grenada','Guam','Guatemala','Guernsey',
+                            'Guinea','Guinea-Bissau','Guyana','Haiti','Honduras','Hong Kong','Hungary','Iceland','India','Indonesia','Iran',
+                            'Iraq','Ireland','Isle of Man','Israel','Italy','Jamaica','Japan','Jersey','Jordan','Kazakhstan','Kenya',
+                            'Kosovo','Kuwait','Kyrgyzstan','Laos','Latvia','Lebanon','Lesotho','Liberia','Libya','Liechtenstein','Lithuania',
+                            'Luxembourg','Macedonia','Madagascar','Malawi','Malaysia','Maldives','Mali','Malta','Mauritania','Mauritius',
+                            'Mexico','Moldova','Monaco','Mongolia','Montenegro','Montserrat','Morocco','Mozambique','Myanmar','Namibia','Nepal',
+                            'Netherlands','New Caledonia','New Zealand','Nicaragua','Niger','Nigeria','Northern Mariana Islands','Norway','Oman',
+                            'Pakistan','Palestine','Panama','Papua New Guinea','Paraguay','Peru','Philippines','Poland','Portugal','Puerto Rico','Qatar',
+                            'Romania','Russia','Rwanda','Saint Kitts and Nevis','Saint Lucia','Saint Vincent and the Grenadines','San Marino',
+                            'Sao Tome and Principe','Saudi Arabia','Senegal','Serbia','Seychelles','Sierra Leone','Singapore','Sint Maarten (Dutch part)'
+                            ,'Slovakia','Slovenia','Somalia','South Africa','South Korea','South Sudan','Spain','Sri Lanka','Sudan','Suriname',
+                            'Swaziland','Sweden','Switzerland','Syria','Taiwan','Tajikistan','Tanzania','Thailand','Timor','Togo','Trinidad and Tobago',
+                            'Tunisia','Turkey','Turks and Caicos Islands','Uganda','Ukraine','United Arab Emirates','United Kingdom',
+                            'United States Virgin Islands','Uruguay','Uzbekistan','Vatican','Venezuela','Vietnam','Western Sahara','Yemen','Zambia','Zimbabwe'];
+
+                        for(var i = 0; i < options.length; i++) {
+                            var opt = options[i];
+                            var el = document.createElement("option");
+                            el.textContent = opt;
+                            el.value = opt;
+                            select.appendChild(el);
+                        }
+                    </script>
+                </select>
+                </p>
+
+                <svg id="graph" width="900" height="800"></svg>
+                <script src="Scripts/script.js"></script>
+
+                <!-- <script src="scripts/annotations-aus.js"></script> -->
+            </div>
+
+            <nav class="blog-pagination">
+                <a class="btn btn-outline-primary" href="scene-2-UK.html">Previous: UK</a>
+                <a class="btn btn-outline-primary" href="Index.html">Start Over</a>
+            </nav>
+        </div>
+    </div>
+
+</main>
+
+<footer class="emily-footer">
+    <p> Data Source: Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021) </p>
+</footer>
+</body>
+</html>

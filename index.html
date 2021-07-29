@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Load d3.js and plugin -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <title>How does Covid-19 vaccinated rates correlate with new cases?</title>
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+    <header class="emily-header py-3">
+        <div class="text-center">
+            <h1 class="emily-header-logo text-dark"> Covid-19 Narrative Visualization </h1>
+        </div>
+    </header>
+    <div class="nav-scroller py-1 mb-2">
+        <nav class="nav d-flex justify-content-between">
+            <a class="p-2 text-muted" href="index.html">Introduction</a>
+            <a class="p-2 text-muted" href="scene-2-USA.html">USA</a>
+            <a class="p-2 text-muted" href="scene-2-Israel.html">Israel</a>
+            <a class="p-2 text-muted" href="scene-2-UK.html">United Kingdom</a>
+            <a class="p-2 text-muted" href="scene-3.html">Explore Other Countries</a>
+        </nav>
+    </div>
+
+    <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
+        <div class="px-0">
+            <h1 class="display-6 font-italic">How does Covid-19 vaccinated rate correlate with new cases?</h1>
+<!--            <p class="lead my-3"> Since December 2019, the world has been fighting against Covid-19.-->
+<!--                We will look at the Covid-19 daily new case numbers along with total vaccinated rate,-->
+<!--                so that we can answer the question- if Covid-19 vaccinated rate correlate with new case numbers.-->
+<!--                <br> The data is filtered from December 2020 because the vaccines were distributed around that time <br>-->
+<!--                I suggest you to take a look at the 3 countries(USA, Israel, UK) that was outstanding at one point of the Covid-19 journey.-->
+<!--                At the end of the scenes, you will have chance to explore other countries data as well. </p>-->
+
+                <p class="lead my-3"> Early July, New York Times released an article revealing Covid-19 cases are growing even with the increase of vaccinations.
+                    While reading the article, I was curious to see if this was happening in any other countries as well.
+                    <br> To answer the question; if Covid-19 daily confirmed cases are rising regardless of the increased pace of vaccinations, we will need to look at Covid-19 daily new case numbers along with the total vaccinated rate by country.
+                    I suggest you to take a look at the 3 countries(USA, Israel, UK) that was outstanding at one point during the Covid-19 pandemic.
+                    The U.S. being the first country to have 1 million people infected, Israel which was the first to have 50 percent of the population vaccinated,
+                    and the UK which was the first country to authorise and begin use of the Pfizer–BioNTech vaccine in a mass vaccination program.
+                    <br> At the end, you will have chance to explore the data of other countries.
+                </p>
+        </div>
+    </div>
+    <nav class="blog-pagination">
+        <br><a class="btn btn-outline-primary" href="scene-2-USA.html"> Let's look at USA Data! </a>
+    </nav>
+    <div>
+        <br>
+        <h5> References </h5>
+        <p> [1] https://www.nytimes.com/live/2021/03/19/world/covid-vaccine-coronavirus-cases </p>
+        <br>
+    </div>
+</div>
+
+
+<footer class="emily-footer">
+    <h6> Data Source </h6>
+    <p> Hasell, J., Mathieu, E., Beltekian, D. et al. A cross-country database of COVID-19 testing. Sci Data 7, 345 (2020)
+        <br> Mathieu, E., Ritchie, H., Ortiz-Ospina, E. et al. A global database of COVID-19 vaccinations. Nat Hum Behav (2021) </p>
+</footer>
+</body>
+</html>
