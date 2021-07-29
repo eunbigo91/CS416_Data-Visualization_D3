@@ -200,11 +200,15 @@ async function init() {
         g.select("#y-axis")
             .call(d3.axisLeft(y).tickFormat(d3.format(".2s")));
 
-        // re-draw the bars
-        g.selectAll(".bar")
+        // redraw the bars
+        g.append("g")
+            .attr("class", "bar-group")
+            .selectAll(".bar")
             .data(data)
             .join("rect")
             .attr("class", "bar")
+            .style("position", "absolute")
+            .style("z-index", "-1")
             .attr("x", d => x(parseTime(d.date)))
             .attr("y", d => y(d.new_cases))
             .attr("width", x.bandwidth())
@@ -217,7 +221,7 @@ async function init() {
             .on("mousemove", function(){ tooltip2.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
             .on("mouseout", function(){ tooltip2.style("visibility", "hidden");});
 
-        // Re-draw line chart
+        // Redraw line chart
         line = d3.line()
             .defined(function (d) { return d.people_vaccinated_per_hundred != 0; })
             .x(d => x(parseTime(d.date)))
