@@ -167,11 +167,11 @@ async function init() {
         .style("background", "rgba(255, 255, 255, .7)");
 
     //legends
+    g.append("rect").attr("class","legend").attr("x", 660).attr("y",40).attr("width",200).attr("height",40).style("fill", "white").style("fill-opacity","70%");
     g.append("rect").attr("class","legend").attr("x", 670).attr("y",50).attr("width",10).attr("height",2).style("fill","darkgreen");
     g.append("rect").attr("class","legend").attr("x", 670).attr("y",65).attr("width",10).attr("height",10).style("fill","steelblue");
     g.append("text").attr("class","legend").attr("x", 685).attr("y",50).text("People Vaccinated Per Hundred").style("font-size", "12px").attr("alignment-baseline","middle");
     g.append("text").attr("class","legend").attr("x", 685).attr("y",70).text("New Covid-19 Cases").style("font-size", "12px").attr("alignment-baseline","middle");
-//g.append("rect").attr("class","legend").attr("x", 90).attr("y",40).attr("width",150).attr("height",50).style("background-color","transparent").style("border","1px solid black");
     g.selectAll(".legend").attr("transform", "translate(-50,0)")
 
 
