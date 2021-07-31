@@ -32,9 +32,9 @@ const annotations = [
         // New cases increases
         type: d3.annotationCalloutCircle,
         note: {
-            label: "The Delta variant became the dominant strain in the UK and drove a third wave of infections[2]",
+            label: "The Delta variant became the dominant strain in the UK and drove a third wave of infections [2]",
             title: "New cases increased again",
-            wrap: 200
+            wrap: 170
         },
         subject: {
             radius: 40
@@ -42,7 +42,7 @@ const annotations = [
         x: 825,
         y: 350,
         dy: 30,
-        dx: -50
+        dx: -60
     }].map(function(d){ d.color = "#990000"; return d})
 
 const makeAnnotations = d3.annotation()

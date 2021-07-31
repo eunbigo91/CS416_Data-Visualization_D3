@@ -207,8 +207,6 @@ async function init() {
             .data(data)
             .join("rect")
             .attr("class", "bar")
-            .style("position", "absolute")
-            .style("z-index", "-1")
             .attr("x", d => x(parseTime(d.date)))
             .attr("y", d => y(d.new_cases))
             .attr("width", x.bandwidth())
